@@ -1,20 +1,19 @@
+import 'dart:io';
+
 void main() {
   int numberOfRows = 4;
   int currentNumber = 1;
-  String pyramid = ''; 
-  
+
   for (int i = 1; i <= numberOfRows; i++) {
-    for (int j = 1; j <= numberOfRows - i; j++) {
-      pyramid += ' ';
+    for (int j = numberOfRows - i; j >= 1; j--) {
+      stdout.write(" ");
     }
-    
+
     for (int k = 1; k <= i; k++) {
-      pyramid += '$currentNumber ';
+      stdout.write('$currentNumber ');
       currentNumber++;
     }
-    pyramid = pyramid.trimRight() + '\n';
-  }
-  
 
-  print(pyramid);
+    print("");
+  }
 }
